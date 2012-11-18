@@ -1,6 +1,6 @@
 var bbs = require('./routes/bbs');
-    user = require('./routes/user');
-    admin = require('./routes/admin');
+var user = require('./routes/user');
+var admin = require('./routes/admin');
 
 module.exports = function(app) {
     // BBS routes.
