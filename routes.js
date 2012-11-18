@@ -8,6 +8,8 @@ module.exports = function(app) {
     app.get('/', bbs.index);
     app.get('/forum/:forumid', bbs.viewForum);
     app.get('/topic/:topicid', bbs.viewTopic);
+    app.get('/topic/new', bbs.auth_permission, bbs.newTopic);
+    app.post('/topic/new', bbs.auth_permission, bbs.newTopic);
     app.get('/topic/:topicid/edit', bbs.auth_permission, bbs.editTopic);
     app.post('/topic/:topicid/edit', bbs.auth_permission, bbs.editTopic);
     app.post('/topic/:topicid/delete', bbs.auth_permission, bbs.delTopic);
