@@ -25,5 +25,7 @@ module.exports = function(app) {
     // admin routes.
     app.get('/admin', admin.auth, admin.panel);
     app.post('/admin', admin.auth, admin.panel);
-
+    
+    // try_uri return to homepage.
+    app.get('*', bbs.index);
 }
