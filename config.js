@@ -4,4 +4,4 @@ var mongodb = require('mongodb');
 
 
 // Database settings
-
+var mongoStore = require('connect-mongo')(express);
