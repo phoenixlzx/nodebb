@@ -12,8 +12,13 @@ module.exports = function(app) {
     app.post('/topic/new', bbs.auth_permission, bbs.newTopic);
     app.get('/topic/:topicid/edit', bbs.auth_permission, bbs.editTopic);
     app.post('/topic/:topicid/edit', bbs.auth_permission, bbs.editTopic);
-    app.post('/topic/:topicid/delete', bbs.auth_permission, bbs.delTopic);
+    app.get('/topic/:topicid/delete', bbs.auth_permission, bbs.delTopic);
+    app.post('/topic/:topicid/reply', bbs.auth_permission, bbs.reply);
     app.get('/member/:userid', bbs.auth_permission, bbs.viewProfile);
+    app.get('/feed', bbs.feedIndex);
+    app.get('/feed/:forumid', bbs.feedForum);
+    // Do we need feedTopic?
+
 
     // user routes. Need idea for user permission check.
     app.get('/reg', user.auth, user.reg);
