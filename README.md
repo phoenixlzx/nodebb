@@ -2,7 +2,7 @@
 
 ***
 
-A lightweight forum software written in Node.js, using Express framework.
+A lightweight forum software written in Node.js, using Express & mongoDB.
 
 Here is a simple 'empty' Express framework, with some introduction:
 
@@ -17,9 +17,10 @@ Here is a simple 'empty' Express framework, with some introduction:
  *config.js: site settings & database settings
  *routes.js: main routes file
  *package.json: Node.js app dependencies, using `npm install` to meet these dependencies
- *LICENCE: GPLv3 Licence
+ *LICENSE: GPLv3 License
  *README.md: This README file
 
 ***
 
-This is a new project, ideas, pull requests & colaboration requests are all welcome.
+This is a new project just started, ideas, pull requests & colaboration requests are all welcome.
+
