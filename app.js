@@ -10,6 +10,8 @@ var express = require('express')
   , partials = require('express-partials');
 
 var app = express();
+var mongoStore = require('connect-mongo');
+var config = require('./config');
 
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
@@ -20,8 +22,13 @@ app.configure(function(){
   app.use(express.logger('dev'));
   app.use(express.bodyParser());
   app.use(express.methodOverride());
-  app.use(express.cookieParser('your secret here'));
-  app.use(express.session());
+  app.use(express.cookieParser());
+  app.use(express.session({
+      secret: config.cookieSecret,
+      store: new MongoStore({
+          db: config.db
+      })
+  }));
   app.use(app.router);
   app.use(require('less-middleware')({ src: __dirname + '/public' }));
   app.use(express.static(path.join(__dirname, 'public')));

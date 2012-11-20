@@ -1,14 +1,9 @@
 var mongodb = require('mongodb');
 
-exports.config = {
+module.exports = {
     name: 'NodeBB',
     description: 'A lightweight forum software powered by Express & MongoDB',
     version: '0.0.1',
-    
-    // Site settings
-    host: 'http://yourdomain.tld',
-    logo: '',
-    port: 8000
     
     rss: {
         title: 'NodeBB',
@@ -26,5 +21,6 @@ exports.config = {
     // Database settings
     session_secret: 'session_secret',
     auth_cookie_name: 'cookie_auth',
-    var mongoStore = require('connect-mongo')(express);
+    db: 'nodebb',
+    host: 'localhost',
 };

@@ -12,11 +12,11 @@ exports.index = function(req, res) {
 };
 
 exports.viewForum = function(req, res) {
-    // TODO Diplay posts under forum req.body.formid
+    // TODO Diplay posts under forum req.params.formid
 };
 
 exports.viewTopic = function(req, res) {
-    // TODO Display topic contents req.body.topicid
+    // TODO Display topic contents req.params.topicid
     // How to protect user private? dynamicHelper or auth_permission?
 };
 
@@ -30,16 +30,16 @@ exports.editTopic = function(req, res) {
 };
 
 exports.deleteTopic = function(req, res) {
-    // TODO delete topic req.body.topicid, should be done by Admin,
+    // TODO delete topic req.params.topicid, should be done by Admin,
     // forum moderators, if no reply then it can be done by author.
 };
 
 exports.reply = function(req, res) {
-    // TODO post reply to req.body.topicid, BBCode support needed.
+    // TODO post reply to req.params.topicid, BBCode support needed.
 }
 
 exports.viewProfile = function(req, res) {
-    // TODO view user req.body.userid profile, view user posts
+    // TODO view user req.params.userid profile, view user posts
     // and send mail via forum. only logged in user could do this op.
 }
 
@@ -48,4 +48,5 @@ exports.feedIndex = function(req, res) {
 }
 
 exports.feedForum = function(req, res) {
-    // TODO generate req.body.formid to XML feed.
+    // TODO generate req.params.formid to XML feed.
+}

@@ -26,8 +26,8 @@ module.exports = function(app) {
     app.get('/login', user.auth, user.login);
     app.post('/login', user.auth, user.login);
     app.get('/logout', user.auth, user.logout);
-    app.get('/ucp', user.auth, user.control);
-    app.post('/ucp', user.auth, user.control);
+    app.get('/ucp/:userid', user.auth, user.control);
+    app.post('/ucp/:userid', user.auth, user.control);
 
     // admin routes.
     app.get('/admin', admin.auth, admin.panel);
@@ -35,4 +35,4 @@ module.exports = function(app) {
     
     // try_uri return to homepage.
     app.get('*', bbs.index);
-}
+};
